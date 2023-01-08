@@ -95,6 +95,7 @@ runInstall(){
   echo "5) PHP-7.1"
   echo "6) PHP-7.2"
   echo "7) PHP-7.3"
+  echo "8) PHP-7.4"
   echo "0) Not need"
   read -p 'PHP [1-6,0]: ' -r -e -i 7 phpV
   if [ "${phpV}" = '' ]; then
@@ -397,6 +398,9 @@ runInstall(){
       7)
       sed -i "s@lsphp73@lsphp73@g" /usr/local/lsws/conf/vhosts/LLStack-demo.xml
       ;;
+      8)
+      sed -i "s@lsphp74@lsphp73@g" /usr/local/lsws/conf/vhosts/LLStack-demo.xml
+      ;;
     esac
 
   fi
@@ -516,6 +520,9 @@ runInstall(){
       ;;
       7)
       echo -e "\\033[34m PHP: \\033[0m /etc/opt/remi/php73/"
+      ;;
+      8)
+      echo -e "\\033[34m PHP: \\033[0m /etc/opt/remi/php74/"
       ;;
     esac
     fi
